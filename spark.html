@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spark Guest House • Kaihura • Accommodation • Drinks • Sports</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    img.drink-img { width: 80px; height: auto; object-fit: contain; }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar (unchanged) -->
+  <nav class="bg-orange-600 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <i class="text-3xl">🔥</i>
+          <h1 class="text-3xl font-bold">SPARK GUEST HOUSE</h1>
+        </div>
+        <div class="flex space-x-6 text-lg">
+          <button onclick="switchTab(0)" class="hover:underline">🏠 Home</button>
+          <button onclick="switchTab(1)" class="hover:underline">ℹ️ About</button>
+          <button onclick="switchTab(2)" class="hover:underline">🛏️ Services</button>
+          <button onclick="switchTab(3)" class="hover:underline">📞 Contacts</button>
+          <button onclick="switchTab(4)" class="hover:underline">📅 Book</button>
+          <button onclick="showAuthModal()" class="bg-white text-orange-600 px-5 py-2 rounded font-bold">👤 Login / Register</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero (unchanged) -->
+  <header class="relative text-white text-center">
+    <img src="https://assets.isu.pub/document-structure/240716175145-fc41481a5a3cd7f915788bf321b5b652/v1/539b93db802cc5da7ac4d5a1e2a340ac.jpeg" alt="Spark Guest House Building" class="w-full h-96 object-cover brightness-75">
+    <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/40">
+      <h2 class="text-5xl font-bold">Welcome to Spark Guest House • Kaihura</h2>
+      <p class="mt-4 text-xl">Rest • Watch Live Sports • Soft & Hard Drinks • Pool • DSTV • Music</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <button onclick="switchTab(4)" class="bg-white text-orange-600 px-8 py-3 rounded font-bold text-lg">Book Now</button>
+        <button onclick="switchTab(2)" class="border border-white px-8 py-3 rounded font-bold text-lg">View Rooms & Drinks</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 py-8">
+
+    <!-- HOME (simplified) -->
+    <div id="tab0" class="tab-content active">
+      <h2 class="text-3xl font-bold mb-6">🏠 Home</h2>
+      <p class="text-lg">Your perfect stop in Kaihura – rest, sports, drinks & more!</p>
+      <button onclick="switchTab(4)" class="mt-6 bg-orange-600 text-white px-10 py-3 rounded text-xl">Make a Booking</button>
+    </div>
+
+    <!-- ABOUT (unchanged) -->
+    <div id="tab1" class="tab-content">
+      <h2 class="text-3xl font-bold mb-4">About Spark Guest House</h2>
+      <p class="text-lg leading-relaxed">
+        Spark Guest House is located in Kaihura Town Council along Kyenjojo-Fort Portal road, 10 km from Kyenjojo town.<br><br>
+        Founded by businesswoman <strong>ANGELLA TUHAISE</strong> who identified the need for a quality rest place for corporates, with live sports, pool table, music, and soft & hard drinks.
+      </p>
+      <img src="https://assets.isu.pub/document-structure/240716175145-fc41481a5a3cd7f915788bf321b5b652/v1/539b93db802cc5da7ac4d5a1e2a340ac.jpeg" class="my-6 rounded w-full" alt="Building">
+    </div>
+
+    <!-- SERVICES – Expanded Drinks -->
+    <div id="tab2" class="tab-content">
+      <h2 class="text-3xl font-bold mb-6">🛏️ Services & Gallery</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Rooms (unchanged) -->
+        <div>
+          <h3 class="font-bold text-xl">Accommodation</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div><img src="https://hoteldesigns.net/wp-content/uploads/2026/03/wols-1170x658.png" class="rounded"><p>Standard – 30,000 UGX/night</p></div>
+            <div><img src="https://mos.nyc/wp-content/uploads/2024/05/Studio_4_PH_13-2400x1600.webp" class="rounded"><p>Deluxe – 50,000 UGX/night</p></div>
+            <div><img src="https://mos.nyc/wp-content/uploads/2024/05/71-2133x1600.webp" class="rounded"><p>Executive Suite – 80,000 UGX/night</p></div>
+          </div>
+        </div>
+
+        <!-- Pool / DSTV (unchanged) -->
+        <div>
+          <h3 class="font-bold">Pool Table • DSTV • Music</h3>
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/e5666c33053841.569e4b4beed56.jpg" class="rounded mb-3" alt="Pool Table">
+          <p class="text-green-600">✔ Live Sports • DSTV • Loud Music • Karaoke Nights</p>
+        </div>
+
+        <!-- Drinks – Now with more items -->
+        <div>
+          <h3 class="font-bold text-xl">Soft & Hard Drinks</h3>
+          <div class="grid grid-cols-3 gap-4 mt-4 text-center text-sm">
+            <div><img src="https://www.ugandabreweries.com/~/media/Images/D/Diageo-V2/uganda-breweries/our-brands/beer/beer-detail-page/bell-lager.webp" class="drink-img mx-auto" alt="Bell Lager"><p>Bell Lager<br>5,500 UGX</p></div>
+            <div><img src="https://www.shutterstock.com/shutterstock/photos/2710893537/display_1500/stock-photo-close-up-of-guinness-extra-stout-beer-bottles-in-six-pack-on-store-shelf-toronto-canada-2710893537.jpg" class="drink-img mx-auto" alt="Guinness"><p>Guinness<br>6,500 UGX</p></div>
+            <div><img src="https://i0.wp.com/observer.ug/wp-content/uploads/2020/06/Nile-Special-beer.png?fit=652%2C478&ssl=1" class="drink-img mx-auto" alt="Nile Special"><p>Nile Special<br>6,000 UGX</p></div>
+            <div><img src="https://www.ugandabreweries.com/~/media/Images/D/Diageo-V2/uganda-breweries/our-brands/beer/beer-detail-page/tusker-lite.webp" class="drink-img mx-auto" alt="Tusker Lite"><p>Tusker Lite<br>5,000 UGX</p></div>
+            <div><img src="https://m.media-amazon.com/images/I/71QNEl5qTEL.jpg" class="drink-img mx-auto" alt="Red Bull"><p>Red Bull<br>7,000 UGX</p></div>
+            <div><img src="https://thumbs.dreamstime.com/b/untitled-design-348418269.jpg" class="drink-img mx-auto" alt="Wine"><p>Wine (glass)<br>8,000 UGX</p></div>
+            <div><img src="https://afrovibesltd.com/cdn/shop/files/Afro_Vibes_21_-_Composition_2048x.jpg?v=1619041939" class="drink-img mx-auto" alt="Club"><p>Club Pilsner<br>5,500 UGX</p></div>
+            <div><img src="https://www.ugandabreweries.com/~/media/Images/D/Diageo-V2/uganda-breweries/our-brands/beer/beer-detail-page/nile-gold.webp" class="drink-img mx-auto" alt="Nile Gold"><p>Nile Gold<br>5,800 UGX</p></div>
+            <div><img src="https://example.com/castle-lite.jpg" class="drink-img mx-auto" alt="Castle Lite"><p>Castle Lite<br>6,000 UGX</p></div>
+            <div><img src="https://example.com/sting-energy.jpg" class="drink-img mx-auto" alt="Sting"><p>Sting Energy<br>5,000 UGX</p></div>
+            <div><img src="https://example.com/rock-boom.jpg" class="drink-img mx-auto" alt="Rock Boom"><p>Rock Boom<br>4,500 UGX</p></div>
+            <div><img src="https://example.com/coke.jpg" class="drink-img mx-auto" alt="Coca-Cola"><p>Coca-Cola / Nile Soda<br>2,500 UGX</p></div>
+            <div><img src="https://example.com/smirnoff-ice.jpg" class="drink-img mx-auto" alt="Smirnoff Ice"><p>Smirnoff Ice<br>7,500 UGX</p></div>
+            <div><img src="https://example.com/alvaro.jpg" class="drink-img mx-auto" alt="Alvaro"><p>Alvaro (non-alc)<br>4,000 UGX</p></div>
+          </div>
+          <button onclick="switchTab(4)" class="mt-6 w-full bg-green-600 text-white py-3 rounded">Book Drinks or Rooms →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACTS (unchanged) -->
+    <div id="tab3" class="tab-content">
+      <h2 class="text-3xl font-bold mb-6">📞 Get in Touch</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p><strong>WhatsApp:</strong> 0780 142 737 • 0785 195 149</p>
+          <p><strong>Call:</strong> 0747 932 207 • 0775 076 260</p>
+          <p><strong>Email:</strong> angellatuhaise162@gmail.com • richardsonsaturday@gmail.com</p>
+          <p class="mt-4">📍 Kaihura Town Council, Kyenjojo-Fort Portal Road, 10km from Kyenjojo</p>
+        </div>
+        <button onclick="alert('📱 WhatsApp opened! (demo)')" class="bg-green-500 text-white py-6 text-2xl rounded">💬 Chat on WhatsApp Now</button>
+      </div>
+    </div>
+
+    <!-- BOOKING – Expanded select options -->
+    <div id="tab4" class="tab-content">
+      <h2 class="text-3xl font-bold mb-6">📅 Book Accommodation or Drinks</h2>
+
+      <!-- Login reminder (unchanged) -->
+      <?php if (!isset($_SESSION['user_id'])): ?>
+        <div class="bg-yellow-100 p-6 rounded mb-6 text-center">
+          <p class="text-lg font-medium">Please <button onclick="showAuthModal()" class="text-blue-600 underline">login</button> or <button onclick="showAuthModal()" class="text-green-600 underline">create account</button> first to book.</p>
+        </div>
+      <?php else: ?>
+        <p class="text-green-700 mb-4">Welcome, <?= htmlspecialchars($_SESSION['full_name'] ?? 'Guest') ?>!</p>
+      <?php endif; ?>
+
+      <form method="POST" action="book.php" class="bg-white p-6 rounded shadow">
+        <input type="hidden" name="book_now" value="1">
+
+        <div class="mb-6">
+          <label class="block font-bold mb-2">Select Item</label>
+          <select name="item_name" id="item_name" class="w-full border p-3 rounded" required onchange="updatePrice()">
+            <option value="">-- Choose --</option>
+            <optgroup label="Rooms">
+              <option value="Standard Room" data-price="30000">Standard Room - 30,000 UGX / night</option>
+              <option value="Deluxe Room" data-price="50000">Deluxe Room - 50,000 UGX / night</option>
+              <option value="Executive Suite" data-price="80000">Executive Suite - 80,000 UGX / night</option>
+            </optgroup>
+            <optgroup label="Drinks">
+              <option value="Bell Lager" data-price="5500">Bell Lager - 5,500 UGX</option>
+              <option value="Guinness" data-price="6500">Guinness - 6,500 UGX</option>
+              <option value="Nile Special" data-price="6000">Nile Special - 6,000 UGX</option>
+              <option value="Tusker Lite" data-price="5000">Tusker Lite - 5,000 UGX</option>
+              <option value="Club Pilsner" data-price="5500">Club Pilsner - 5,500 UGX</option>
+              <option value="Nile Gold" data-price="5800">Nile Gold - 5,800 UGX</option>
+              <option value="Castle Lite" data-price="6000">Castle Lite - 6,000 UGX</option>
+              <option value="Red Bull" data-price="7000">Red Bull - 7,000 UGX</option>
+              <option value="Sting Energy" data-price="5000">Sting Energy - 5,000 UGX</option>
+              <option value="Rock Boom" data-price="4500">Rock Boom - 4,500 UGX</option>
+              <option value="Smirnoff Ice" data-price="7500">Smirnoff Ice - 7,500 UGX</option>
+              <option value="Alvaro (non-alcoholic)" data-price="4000">Alvaro - 4,000 UGX</option>
+              <option value="Coca-Cola / Nile Soda" data-price="2500">Coke / Nile Soda - 2,500 UGX</option>
+              <option value="Wine (glass)" data-price="8000">Wine (glass) - 8,000 UGX</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="mb-6">
+          <label class="block font-bold mb-2">Quantity / Nights</label>
+          <input type="number" name="quantity" value="1" min="1" class="w-full border p-3 rounded" required oninput="updatePrice()">
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label class="block font-bold mb-2">Check-in Date (rooms only)</label>
+            <input type="date" name="check_in" class="w-full border p-3 rounded">
+          </div>
+          <div>
+            <label class="block font-bold mb-2">Check-out Date (rooms only)</label>
+            <input type="date" name="check_out" class="w-full border p-3 rounded">
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block font-bold mb-2">Phone for confirmation & payment</label>
+          <input type="tel" name="phone_number" placeholder="0780142737" required class="w-full border p-3 rounded">
+        </div>
+
+        <div class="mb-6">
+          <p class="font-bold text-xl">Total: <span id="display_total">0 UGX</span></p>
+          <input type="hidden" name="total_price" id="total_price" value="0">
+        </div>
+
+        <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black py-4 rounded font-bold text-lg">
+          Confirm Booking → Pay via Mobile Money
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <p>© 2026 Spark Guest House • Built for Angella Tuhaise</p>
+  </footer>
+
+  <!-- Auth Modal & Scripts (keep your existing modal code here) -->
+  <!-- ... paste your auth modal HTML + JS functions ... -->
+
+  <script>
+    function switchTab(n) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab'+n).classList.add('active');
+    }
+
+    function updatePrice() {
+      const select = document.getElementById('item_name');
+      const qty = parseInt(document.querySelector('input[name="quantity"]').value) || 1;
+      const option = select.options[select.selectedIndex];
+      const price = option.dataset.price ? parseInt(option.dataset.price) : 0;
+      const total = price * qty;
+
+      document.getElementById('display_total').textContent = total.toLocaleString() + ' UGX';
+      document.getElementById('total_price').value = total;
+    }
+
+    // Initial call
+    updatePrice();
+  </script>
+</body>
+</html>
